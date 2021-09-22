@@ -6,6 +6,12 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import ProductPage from './pages/ProductPage';
 import CartPage from './pages/Cart';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Profile from './pages/Profile';
+import Shipping from './pages/Shipping';
+import Payment from './pages/Payment';
+import PlaceOrder from './pages/PlaceOrder';
 
 const App = () => {
   return (
@@ -13,9 +19,15 @@ const App = () => {
       <Header />
       <main className="py-3">
         <Container>
-          <Route path="/" component={Home} exact />
+          <Route path="/shipping" component={Shipping} />
+          <Route path="/payment" component={Payment} />
+          <Route path="/placeorder" component={PlaceOrder} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          <Route path="/profile" component={Profile} />
           <Route path="/product/:id" component={ProductPage} />
           <Route path="/cart/:id?" component={CartPage} />
+          <Route path="/" component={Home} exact />
         </Container>
       </main>
       <Footer />
