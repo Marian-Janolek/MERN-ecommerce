@@ -14,6 +14,10 @@ import Payment from './pages/Payment';
 import PlaceOrder from './pages/PlaceOrder';
 import Order from './pages/Order';
 import UserList from './pages/UserList';
+import UserEdit from './pages/UserEdit';
+import ProductList from './pages/ProductList';
+import ProductEdit from './pages/ProductEdit';
+import OrderList from './pages/OrderList';
 
 const App = () => {
   return (
@@ -31,6 +35,18 @@ const App = () => {
           <Route path="/product/:id" component={ProductPage} />
           <Route path="/cart/:id?" component={CartPage} />
           <Route path="/admin/userlist" component={UserList} />
+          <Route path="/admin/product/:id/edit" component={ProductEdit} />
+          <Route path="/admin/productlist" component={ProductList} exact />
+          <Route
+            path="/admin/productlist/:pageNumber"
+            component={ProductList}
+            exact
+          />
+          <Route path="/admin/user/:id/edit" component={UserEdit} />
+          <Route path="/admin/orderlist" component={OrderList} />
+          <Route path="/search/:keyword" component={Home} exact />
+          <Route path="/page/:pageNumber" component={Home} />
+          <Route path="/search/:keyword/page/:pageNumber" component={Home} />
           <Route path="/" component={Home} exact />
         </Container>
       </main>
